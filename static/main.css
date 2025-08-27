@@ -31,8 +31,8 @@ body{
     height:100%;
     /* background-color: rgb(255, 255, 255); */
     /* background: conic-gradient(blue,aqua,blue); */
-    background: conic-gradient(from 0deg, #00c6ff, #0072ff, #005bea, #0040c1, #00c6ff);
-    /* background: conic-gradient(from 0deg, #ff00c8, #00ffe7, #00ff0a, #ffe600, #ff00c8); */
+    /* background: conic-gradient(from 0deg, #00c6ff, #0072ff, #005bea, #0040c1, #00c6ff); */
+    background: conic-gradient(from 0deg, #ff00c8, #00ffe7, #00ff0a, #ffe600, #ff00c8);
     /* background: conic-gradient(from 0deg, red, orange, yellow, lime, cyan, blue, violet, red); */
 
     border-radius: 10px;
