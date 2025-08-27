@@ -31,8 +31,8 @@ body{
     height:100%;
     /* background-color: rgb(255, 255, 255); */
     /* background: conic-gradient(blue,aqua,blue); */
-    /* background: conic-gradient(from 0deg, #00c6ff, #0072ff, #005bea, #0040c1, #00c6ff); */
-    background: conic-gradient(from 0deg, #ff00c8, #00ffe7, #00ff0a, #ffe600, #ff00c8);
+    background: conic-gradient(from 0deg, #00c6ff, #0072ff, #005bea, #0040c1, #00c6ff);
+    /* background: conic-gradient(from 0deg, #ff00c8, #00ffe7, #00ff0a, #ffe600, #ff00c8); */
     /* background: conic-gradient(from 0deg, red, orange, yellow, lime, cyan, blue, violet, red); */
 
     border-radius: 10px;
@@ -73,7 +73,8 @@ body{
     flex:0 0 auto;
     position: relative;
     left: -9px;
-    top:0px
+    top:0px;
+    touch-action: none;
     /* left:-15px; */
 }
 
@@ -95,5 +96,6 @@ body{
     background-color: white;
     position: relative;
     left:0px;
-    top:0px
+    top:0px;
+    touch-action: none;
 }
