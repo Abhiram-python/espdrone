@@ -5,6 +5,21 @@ var oy,ox,topv
 var ojoy=document.getElementById("ojoy")
 var fjoy=document.getElementById("fjoy")
 
+const joystick = document.getElementById('con-con'); // or however you select it
+
+joystick.addEventListener('touchstart', (e) => {
+  e.preventDefault(); // prevent zoom, scrolling, etc.
+});
+
+joystick.addEventListener('touchmove', (e) => {
+  e.preventDefault();
+});
+
+joystick.addEventListener('touchend', (e) => {
+  e.preventDefault();
+});
+
+
 document.addEventListener("mousemove",(ev)=>{
     if (onedmove==true){
         if (ev.clientY-oy+topv>100){
