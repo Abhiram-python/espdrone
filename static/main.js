@@ -1,5 +1,3 @@
-var onedmove=false
-var fourdmove=false
 var topv
 var ojoy_oy
 var fjoy_ox,fjoy_oy
