@@ -8,8 +8,12 @@ var ojoy=document.getElementById("ojoy")
 var fjoy=document.getElementById("fjoy")
 
 
+let ojoy_pointerId = null;
+let fjoy_pointerId = null;
+
+
 document.addEventListener("pointermove", (ev) => {
-    if (onedmove == true) {
+    if (ev.pointerId === ojoy_pointerId) {
         if (ev.clientY - ojoy_oy + topv > 100) {
             ojoy.style.top = `${100}px`
         }
@@ -23,7 +27,7 @@ document.addEventListener("pointermove", (ev) => {
         console.log(ev.clientY - ojoy_oy)
     }
 
-    else if (fourdmove == true) {
+    else if (ev.pointerId === fjoy_pointerId) {
 
         if (ev.clientX - fjoy_ox > 70) {
             fjoy.style.left = `${70}px`
@@ -48,22 +52,29 @@ document.addEventListener("pointermove", (ev) => {
 })
 
 ojoy.addEventListener("pointerdown", (ev) => {
-    onedmove = true
-    ojoy_oy = ev.clientY
-    topv = parseInt(window.getComputedStyle(ojoy).top, 10)
+    ojoy_pointerId = ev.pointerId;
+    ojoy_oy = ev.clientY;
+    topv = parseInt(window.getComputedStyle(ojoy).top, 10);
+    ojoy.setPointerCapture(ev.pointerId);
 })
 
 fjoy.addEventListener("pointerdown", (ev) => {
-    fourdmove = true
-    fjoy_ox = ev.clientX
-    fjoy_oy = ev.clientY
-    fjoy.style.transition = "0s"
+    fjoy_pointerId = ev.pointerId;
+    fjoy_ox = ev.clientX;
+    fjoy_oy = ev.clientY;
+    fjoy.style.transition = "0s";
+    fjoy.setPointerCapture(ev.pointerId);
 })
 
-document.addEventListener("pointerup", () => {
-    onedmove = false
-    fourdmove = false
-    fjoy.style.transition = ".1s"
-    fjoy.style.left = "0px"
-    fjoy.style.top = "0px"
+document.addEventListener("pointerup", (ev) => {
+    if (ev.pointerId === ojoy_pointerId) {
+        ojoy_pointerId = null;
+    }
+
+    if (ev.pointerId === fjoy_pointerId) {
+        fjoy_pointerId = null;
+        fjoy.style.transition = ".1s";
+        fjoy.style.left = "0px";
+        fjoy.style.top = "0px";
+    }
 })
